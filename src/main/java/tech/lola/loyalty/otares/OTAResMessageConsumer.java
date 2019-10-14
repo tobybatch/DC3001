@@ -31,7 +31,7 @@ public class OTAResMessageConsumer {
 		
         RestTemplate restTemplate = new RestTemplate();
         Customer customer = restTemplate.getForObject(oatresCustomerEndoint, Customer.class);
-        LOGGER.error(customer.toString());
+        LOGGER.info(customer.toString());
         
 
 	}
