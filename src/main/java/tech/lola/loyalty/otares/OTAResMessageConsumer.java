@@ -10,8 +10,8 @@ import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.annotation.JmsListener;
 
-import tech.lola.loyalty.otares.model.Address;
-import tech.lola.loyalty.otares.model.Customer;
+import tech.lola.loyalty.otares.model.AddressDto;
+import tech.lola.loyalty.otares.model.CustomerDto;
 
 @Configuration
 public class OTAResMessageConsumer {
@@ -23,16 +23,25 @@ public class OTAResMessageConsumer {
 
 	@JmsListener(destination = "helloworld.q")
 	public void customerUpdated(String message) {
-		
-		String customerId = "29533087";
+
+		// String customerId = "29533087";
+		String customerId = "1";
 		
 		// We have the customer id, get the customer
 		String oatresCustomerEndoint = this.apiRoute + "/customers/" + customerId;
+		LOGGER.info("oatresCustomerEndoint: " + oatresCustomerEndoint);
 		
+		// TODO catch 404
         RestTemplate restTemplate = new RestTemplate();
-        Customer customer = restTemplate.getForObject(oatresCustomerEndoint, Customer.class);
+        CustomerDto customer = restTemplate.getForObject(oatresCustomerEndoint, CustomerDto.class);
         LOGGER.info(customer.toString());
         
-
+        // If this customer doesn't have a loyalty it's not in the program.
+        String loyaltyId = "010101010";
+        
+        // Does the use exist in Tally
+        
+        // Update it
+        // Create it
 	}
 }

@@ -8,16 +8,13 @@ import lombok.ToString;
 
 @Getter @Setter @NoArgsConstructor @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Address {
-
-	private Long id;
-	private String line1;
-	private String line2;
-	private String city;
-	private String stateCode;
-	private String postalCode;
-	private String countryCode;
-	private String friendlyName;
-	private int addressTypeId;
-	private boolean primary;
+public class CustomerProgramDto {
+	private int id;
+	private int programId;
+	private String programName;
+	private int status;
+	private String programNamestatusName;
+	private String programNameeffDatetime;
+	private String programNameexpDatetime;
+	private ProfileCouponCodeDto[] couponCodes;
 }

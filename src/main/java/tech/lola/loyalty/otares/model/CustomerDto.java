@@ -9,7 +9,7 @@ import lombok.ToString;
 
 @Getter @Setter @NoArgsConstructor @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Customer {
+public class CustomerDto {
 
     private Long id;
     private String emailAddress;
@@ -23,7 +23,10 @@ public class Customer {
     private int acquisitionSource;
     private String passwordResetToken;
 
-    private Address[] addresses;
-    private PhoneNumber[] phoneNumbers;
-    private SecondaryEmailAddress[] secondaryEmailAddresses;
+    private ProfileDto profile;
+    private AddressDto[] addresses;
+    private PhoneDto[] phoneNumbers;
+    private EmailAddressDto[] secondaryEmailAddresses;
+    private CustomerProgramDto[] customerPrograms;
+    private Credential credential;
 }

@@ -1,4 +1,4 @@
-package tech.lola.loyalty.otares.model;
+package tech.lola.loyalty.tally.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
@@ -8,9 +8,10 @@ import lombok.ToString;
 
 @Getter @Setter @NoArgsConstructor @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SecondaryEmailAddress {
-
-	private Long id;
-	private String email;
-	private String friendlyName;
+public class MemberTier {
+	private String tierCode;
+	private String tierName;
+	private String tierTypeCode;
+	private String startDate;
+	private String endDate;
 }

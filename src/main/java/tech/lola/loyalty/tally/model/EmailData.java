@@ -1,4 +1,4 @@
-package tech.lola.loyalty.otares.model;
+package tech.lola.loyalty.tally.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
@@ -8,12 +8,10 @@ import lombok.ToString;
 
 @Getter @Setter @NoArgsConstructor @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PhoneNumber {
-
-    private Long id;
-    private String nbr;
-    private int phoneType;
-    private String friendlyName;
-    private String country;
-    private boolean primary;
+public class EmailData {
+	private int order;
+	private boolean validated;
+	private String email;
+	private String type;
+	private String status;
 }
