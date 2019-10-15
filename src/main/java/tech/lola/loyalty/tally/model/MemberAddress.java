@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import tech.lola.loyalty.otares.model.AddressDto;
+import tech.lola.loyalty.otares.model.CustomerDto;
 
 @Getter @Setter @NoArgsConstructor @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -27,4 +29,14 @@ public class MemberAddress {
 	private String unicodeCountryCode;
 	private String order;
 
+    /**
+     * Creates a Tally ready MemberAddress object from an OTRRes AddressDto
+     * 
+     * @param dtoPhone The rest template object from OTARes
+     * @return The rest template object ready for Tally.
+     */
+	public static MemberAddress factory(AddressDto dtoAddress) {
+		MemberAddress address = new MemberAddress();
+		return address;
+	}
 }

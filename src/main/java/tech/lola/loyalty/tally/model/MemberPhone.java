@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import tech.lola.loyalty.otares.model.CustomerDto;
+import tech.lola.loyalty.otares.model.PhoneDto;
 
 @Getter @Setter @NoArgsConstructor @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -14,4 +16,15 @@ public class MemberPhone {
     private String phoneType;
     private String carrier;
     private String phoneExtension;
+
+    /**
+     * Creates a Tally ready MemberPhone object from an OTRRes PhoneDto
+     * 
+     * @param dtoPhone The rest template object from OTARes
+     * @return The rest template object ready for Tally.
+     */
+	public static MemberPhone factory(PhoneDto dtoPhone) {
+		MemberPhone memberPhone = new MemberPhone();
+		return memberPhone;
+	}
 }
