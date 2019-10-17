@@ -13,6 +13,7 @@ import lombok.ToString;
 public class CustomerDto {
 
     private Long id;
+    private String loyaltyId;
     private String emailAddress;
     private String firstName;
     private String lastName;

@@ -21,5 +21,6 @@ public class OTAResMessageTest {
 	  @Test
 	  public void testReceive() throws Exception {
 		  producer.send("Hello Spring JMS ActiveMQ!");
+		  
 	  }
 }

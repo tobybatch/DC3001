@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
+import tech.lola.loyalty.otares.service.CustomerService;
+
 @SpringBootApplication
 @Configuration
 public class Dc3001Application {
@@ -19,4 +21,14 @@ public class Dc3001Application {
 	public RestTemplate restTemplate(RestTemplateBuilder builder) {
 	   return builder.build();
 	}
+	
+    @Bean
+    public CustomerService getCustomerService(){
+        return new CustomerService();
+    }
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 }
