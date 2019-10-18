@@ -15,6 +15,6 @@ public class OTAResMessageProducer {
 
 	  public void send(String message) {
 	    LOGGER.info("sending message='{}'", message);
-	    jmsTemplate.convertAndSend("helloworld.q", message);
+	    jmsTemplate.convertAndSend("ActiveMQ.Advisory.Topic", message);
 	  }
 }

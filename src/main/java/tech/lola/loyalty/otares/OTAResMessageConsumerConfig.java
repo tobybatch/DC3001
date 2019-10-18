@@ -25,6 +25,7 @@ public class OTAResMessageConsumerConfig {
 	public DefaultJmsListenerContainerFactory jmsListenerContainerFactory() {
 		DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
 		factory.setConnectionFactory(receiverActiveMQConnectionFactory());
+		factory.setPubSubDomain(true);
 
 		return factory;
 	}

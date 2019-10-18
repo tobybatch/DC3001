@@ -13,9 +13,24 @@ public class OTAResMessageConsumer {
 	private String apiRoute;
 			
 	private static final Logger LOGGER = LoggerFactory.getLogger(OTAResMessageConsumer.class);
-
-	@JmsListener(destination = "helloworld.q")
-	public void customerUpdated(String message) {
-		LOGGER.info("Message Received: " + message);
+	
+	public OTAResMessageConsumer() {
+	    LOGGER.info("Started");
 	}
+
+    @JmsListener(destination = "VirtualTopic.events.ota.customers")
+    public void customerUpdated1(String message) {
+        LOGGER.info("Message Received: " + message);
+    }
+
+    @JmsListener(destination = "events.ota.customers")
+    public void customerUpdated2(String message) {
+        LOGGER.info("Message Received: " + message);
+    }
+
+    @JmsListener(destination = "VirtualTopic.events.ota.customers.events.ota.customers")
+    public void customerUpdated3(String message) {
+        LOGGER.info("Message Received: " + message);
+    }
+    
 }
